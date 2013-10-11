@@ -6,6 +6,8 @@ angular.module('gameLogicApp')
     $scope.games = [];
     $scope.queue = {};
 
+
+
     var games = new Firebase("https://nicknewtic.firebaseio.com/games");
     angularFire(games, $scope, "games").then(function () {
 
@@ -55,6 +57,7 @@ angular.module('gameLogicApp')
       $scope.games[$scope.gameId].playerTurn++;
  };
 
+
  
  $scope.findimg=function(cell){
       switch (cell.mark){
@@ -66,6 +69,92 @@ angular.module('gameLogicApp')
  };
 
 
+     
+// START OF WIN LOGIC -------------------  
+
+
+ winner = ""
+ for(x=0; x<=2; ++x) {
+   if($scope.games[$scope.gameId].board[0][x] == $scope.games[$scope.gameId].board[1][x] &&
+      $scope.games[$scope.gameId].board[1][x] == $scope.games[$scope.gameId].board[2][x] &&
+      $scope.games[$scope.gameId].board[2][x] != "" ) 
+   {
+    if ($scope.games[$scope.gameId].board[0][x]=="x") 
+
+    {
+    winner = "x"; }
+      else
+    {
+    winner = "o";
+    }   
+       // var planet = document.getElementById('planet');
+       // planet.style.opacity = "0.9";
+  }
+
+
+
+      
+ if($scope.games[$scope.gameId].board[x][0] == $scope.games[$scope.gameId].board[x][1] &&
+    $scope.games[$scope.gameId].board[x][1] == $scope.games[$scope.gameId].board[x][2] &&
+    $scope.games[$scope.gameId].board[x][2] != "") 
+
+    if ($scope.games[$scope.gameId].board[x][0]=="x") 
+
+    {
+    winner = "x"; }
+      else
+    {
+    winner = "o";
+    }   
+    
+    } 
+
+ if($scope.games[$scope.gameId].board[0][0] == $scope.games[$scope.gameId].board[1][1] &&
+    $scope.games[$scope.gameId].board[1][1] == $scope.games[$scope.gameId].board[2][2] &&
+    $scope.games[$scope.gameId].board[2][2] != "") 
+
+    if ($scope.games[$scope.gameId].board[0][0]=="x") 
+
+    {
+    winner = "x"; }
+      else
+    {
+    winner = "o";
+    }   
+    
+ if($scope.games[$scope.gameId].board[0][2] == $scope.games[$scope.gameId].board[1][1] &&
+    $scope.games[$scope.gameId].board[1][1] == $scope.games[$scope.gameId].board[2][0] &&
+    $scope.games[$scope.gameId].board[2][0] != "") 
+
+    if ($scope.games[$scope.gameId].board[1][1]=="x") 
+
+    {
+    winner = "x"; }
+      else
+    {
+    winner = "o";
+    }       
+
+
+if (winner == "x") {
+
+
+      var popup_screech_wins = document.getElementById('popup_screech_wins');
+       popup_screech_wins.style.backgroundImage = 'url(screechwins1.png)';
+       popup_screech_wins.style.display = "block";
+    } 
+
+    if (winner == "o") {
+
+      var popup_screech_wins = document.getElementById('popup_screech_wins');
+       popup_screech_wins.style.backgroundImage = 'url(urkelwins.png)';
+       popup_screech_wins.style.display = "block";
+
+
+    }
+
+
+}  // end of win logic ------------
 
 
 //location of the array ----> $scope.games[$scope.gameId].board
