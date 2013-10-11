@@ -56,6 +56,20 @@ li input[type="checkbox"] {
     border-left:8px solid lightgrey;
 }
 
+#popup_screech_wins{
+  width:720px;
+  height:650px ;
+/*  background: url(http://i1297.photobucket.com/albums/ag38/wrensalert1/screechwins1_zps1a758144.png);
+*/  background-size:100%;
+  background-repeat: no-repeat;
+  opacity:0.95;
+  position:absolute;
+  top:100px;
+  left:-100px;
+  display: none;
+  }
+  
+
 body {
         background: url(http://i1297.photobucket.com/albums/ag38/wrensalert1/clean_zpsd7b467b0.png);
         background-repeat: no-repeat;
