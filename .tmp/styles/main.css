@@ -1,0 +1,60 @@
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li input[type="checkbox"] {
+  position: relative;
+  bottom: 1px;
+}
+
+#game {
+  background-color: #ababab;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.planet {
+  width: 520px;
+  height: 450px auto;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.sqr {
+  float: left;
+  width: 150px;
+  height: 150px;
+}
+
+.topLine {
+  border-top: 8px solid grey;
+}
+
+.bottomLine {
+  border-bottom: 8px solid lightgrey;
+}
+
+.rightLine {
+  border-right: 8px solid grey;
+}
+
+.leftLine {
+  border-left: 8px solid lightgrey;
+}
+
+body {
+  background: url(http://i1297.photobucket.com/albums/ag38/wrensalert1/clean_zpsd7b467b0.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
